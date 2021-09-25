@@ -57,12 +57,22 @@ function App() {
     <div className="App">
       <header className="App-header">
 
-        <input type="datetime-local" onChange={handleChange} value={dateInput}/>
-        <button type="reset" onClick={handleReset}>x</button>
+        <div className="container">
+          <h2>Discord date-picker</h2>
+          <p>Use the current time, or select a date and time below.
+              Then click on the desired date format to copy it to your clipboard
+          </p>
+
+        <div className="date-picker">
+            <input type="datetime-local" onChange={handleChange} value={dateInput}/>
+            <button type="reset" onClick={handleReset}>Now</button>
+        </div>
 
         {formats.map(([formatted, discordString]) => (
           <time dateTime={date.format()} key={id++}><CopyText data={discordString}>{formatted}</CopyText></time>
         ))}
+
+        </div>
       </header>
     </div>
   );

@@ -7,11 +7,17 @@ interface ICopyTextProps {
 
 const CopyText = ({ data, children }: ICopyTextProps) => {
   const [message, setMessage] = useState<string | undefined>(undefined);
+  let finalData = (data ?? children ?? "").toString();
 
   const handleClick = async () => {
-    await navigator.clipboard.writeText((data ?? children ?? "").toString());
-    setMessage("Copied...");
-    setInterval(() => setMessage(undefined), 1000);
+    try {
+      await navigator.clipboard.writeText(finalData);
+      setMessage("Copied...");
+      setInterval(() => setMessage(undefined), 1000);
+    } catch (err) {
+      console.error(err);
+      prompt("Could not copy to clipboard. Copy this text:", finalData);
+    }
   };
 
   return (
