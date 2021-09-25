@@ -21,7 +21,6 @@
 .container {
   width: 75%;
   max-width: 960px;
-  padding: 10%;
   box-sizing: border-box;
 }
 
@@ -29,6 +28,14 @@
   .container {
     width: 100%;
     max-width: 768px;
+  }
+}
+
+@media (max-width: 960px) {
+  .container {
+    width: 100%;
+    max-width: 960px;
+    padding: 10%;
   }
 }
 
