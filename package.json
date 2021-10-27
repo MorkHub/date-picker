@@ -32,7 +32,7 @@
       "react-app/jest"
     ]
   },
-  "homepage": "https://morkhub.github.io/date-picker",
+  "homepage": "/date-picker",
   "browserslist": {
     "production": [
       ">0.2%",
