@@ -32,7 +32,6 @@
       "react-app/jest"
     ]
   },
-  "homepage": "/date-picker",
   "browserslist": {
     "production": [
       ">0.2%",
